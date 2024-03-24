@@ -7,12 +7,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
+    
     private static final String BASE_URL = "https://api.kbs-dev.com";
-
     private static Retrofit retrofit;
 
 
     public static Retrofit getRetrofit() {
+
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(chain -> {
                     Request request = chain.request().newBuilder()

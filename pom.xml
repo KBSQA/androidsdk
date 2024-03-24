@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kbsqa</groupId>
     <artifactId>ibsdk</artifactId>
-    <version>1.0.4</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
     <description>This is IB SDK</description>
       <modules>
@@ -25,59 +25,58 @@
         </repository>
         <repository>
           <id>github</id>
-          <url>https://maven.pkg.github.com/KBSQA/sdkandroid</url>
+          <url>https://maven.pkg.github.com/KBSQA/androidsdk</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
         </repository>    
     </distributionManagement>
      <build>
-    <plugins>
-    
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.2</version>
-        <configuration> <!-- Compile java 7 compatible bytecode -->
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      
-      <plugin>  <!-- Create sources.jar -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-                <execution>
-                    <id>attach-sources</id>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.2</version>
+          <configuration> <!-- Compile java 7 compatible bytecode -->
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+        </plugin>
+        
+        <plugin>  <!-- Create sources.jar -->
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-source-plugin</artifactId>
+              <executions>
+                  <execution>
+                      <id>attach-sources</id>
+                      <goals>
+                          <goal>jar</goal>
+                      </goals>
+                  </execution>
+              </executions>
+        </plugin>
+        <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <executions>
+                  <execution>
+                    <id>attach-javadocs</id>
                     <goals>
                         <goal>jar</goal>
                     </goals>
-                </execution>
-            </executions>
-      </plugin>
-      <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-                <execution>
-                  <id>attach-javadocs</id>
-                  <goals>
-                      <goal>jar</goal>
-                  </goals>
-                </execution>
-            </executions>
-      </plugin>
-    </plugins>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>maven-snapshots</id>
-            <url>https://repository.apache.org/content/repositories/snapshots/</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>maven-shade-plugin</id>
-            <url>https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin</url>
-        </pluginRepository>
-    </pluginRepositories>
-  </build>
+                  </execution>
+              </executions>
+        </plugin>
+      </plugins>
+      <pluginRepositories>
+          <pluginRepository>
+              <id>maven-snapshots</id>
+              <url>https://repository.apache.org/content/repositories/snapshots/</url>
+          </pluginRepository>
+          <pluginRepository>
+              <id>maven-shade-plugin</id>
+              <url>https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin</url>
+          </pluginRepository>
+      </pluginRepositories>
+    </build>
 </project>
